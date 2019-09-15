@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 @Injectable()
-export class ErrorInterceptor implements HttpInterceptor{
+export class ErrorInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
          return next.handle(req).pipe(
              catchError(error => {
@@ -18,7 +18,7 @@ export class ErrorInterceptor implements HttpInterceptor{
                         return throwError(appError);
                     }
                  }
-                 const serverError = error.error.error;
+                 const serverError = error.error;
                  let modalStateError = '';
                  if (serverError && typeof serverError === 'object') {
                     for (const key in serverError) {
