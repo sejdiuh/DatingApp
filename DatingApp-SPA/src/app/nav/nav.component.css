@@ -5,3 +5,8 @@
 .form-inline{
     float: right;
 }
+img {
+    max-height: 50px;
+    border: 2px solid white;
+    display: inline;
+}
