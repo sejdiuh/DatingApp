@@ -4,7 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BsDropdownModule, TabsModule, BsDatepickerModule } from 'ngx-bootstrap';
+import { BsDropdownModule, TabsModule, BsDatepickerModule, PaginationModule, ButtonsModule } from 'ngx-bootstrap';
+import {TimeAgoPipe} from 'time-ago-pipe';
 
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
@@ -51,7 +52,8 @@ export function tokenGetter() {
       MemberCardComponent,
       MemberDetailComponent,
       MemberEditComponent,
-      PhotoEditorComponent
+      PhotoEditorComponent,
+      TimeAgoPipe
    ],
    imports: [
       BrowserModule,
@@ -60,6 +62,8 @@ export function tokenGetter() {
       FormsModule,
       ReactiveFormsModule,
       BrowserAnimationsModule,
+      PaginationModule.forRoot(),
+      ButtonsModule.forRoot(),
       TabsModule.forRoot(),
       BsDropdownModule.forRoot(),
       BsDatepickerModule.forRoot(),
