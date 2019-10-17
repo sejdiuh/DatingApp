@@ -14,5 +14,6 @@ namespace DatingApp.API.Data
          Task<User> GetUser(int id);
          Task<Photo> GetPhoto(int id);
          Task<Photo> GetMainPhotoUserPhoto(int userId);
+         Task<Like> GetLike(int userId, int recepientId);
     }
 }
